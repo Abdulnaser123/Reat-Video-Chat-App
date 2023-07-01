@@ -1,25 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+/** @format */
 
-function App() {
+import React from "react";
+import { AppBar, Typography } from "@mui/material";
+import { makeStyles } from "@material-ui/core/styles";
+import Notifications from "./components/Notifications";
+import Options from "./components/Options";
+import VideoPlayer from "./components/VideoPlayer";
+
+const useStyles = makeStyles((theme) => ({
+  appBar: {
+    borderRadius: 15,
+    margin: "30px 100px",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItem: "center",
+    width: "600px",
+    border: "2px solid black",
+    [theme.breakpoints.down("xs")]: {
+      width: "90%",
+    },
+  },
+  image: { marginLeft: "15px" },
+  wrapper: {
+    display: "flex",
+    flexDirection: "column",
+    alignItem: "center",
+    width: "100%",
+  },
+}));
+const App = () => {
+  const classes = useStyles();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={classes.wrapper}>
+      <AppBar className={classes.appBar} position='static' color='inherit'>
+        <Typography variant='h2' align='center'>
+          Video Chat
+        </Typography>
+      </AppBar>
+      <VideoPlayer />
+      <Options>
+        <Notifications />
+      </Options>
     </div>
   );
-}
+};
 
 export default App;
