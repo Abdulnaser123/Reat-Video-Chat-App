@@ -2,7 +2,7 @@
 
 import React from "react";
 import { AppBar, Typography } from "@mui/material";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@mui/styles";
 import Notifications from "./components/Notifications";
 import Options from "./components/Options";
 import VideoPlayer from "./components/VideoPlayer";
@@ -10,22 +10,15 @@ import VideoPlayer from "./components/VideoPlayer";
 const useStyles = makeStyles((theme) => ({
   appBar: {
     borderRadius: 15,
-    margin: "30px 100px",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItem: "center",
-    width: "600px",
-    border: "2px solid black",
-    [theme.breakpoints.down("xs")]: {
-      width: "90%",
-    },
+    margin: "40px 100px",
+    width: "fit-content",
+    border: "2px dashed black",
   },
   image: { marginLeft: "15px" },
   wrapper: {
     display: "flex",
     flexDirection: "column",
-    alignItem: "center",
+    alignItems: "center",
     width: "100%",
   },
 }));
