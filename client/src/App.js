@@ -32,8 +32,9 @@ const App = () => {
         </Typography>
       </AppBar>
       <VideoPlayer />
-      <Options />
-      {/* <Notifications /></Options> */}
+      <Options>
+        <Notifications />
+      </Options>
     </div>
   );
 };

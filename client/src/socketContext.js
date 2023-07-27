@@ -6,8 +6,7 @@ import Peer from "simple-peer";
 
 const SocketContext = createContext();
 
-const socket = io("http://localhost:3000");
-// const socket = io("https://warm-wildwood-81069.herokuapp.com");
+const socket = io("http://localhost:5000");
 
 const ContextProvider = ({ children }) => {
   const [callAccepted, setCallAccepted] = useState(false);
@@ -18,7 +17,7 @@ const ContextProvider = ({ children }) => {
   const [me, setMe] = useState("");
 
   const myVideo = useRef({ srcObject: null });
-  const userVideo = useRef();
+  const userVideo = useRef({ srcObject: null });
   const connectionRef = useRef();
 
   useEffect(() => {
@@ -33,7 +32,7 @@ const ContextProvider = ({ children }) => {
     socket.on("me", (id) => setMe(id));
 
     socket.on("callUser", ({ from, name: callerName, signal }) => {
-      setCall({ isReceivingCall: true, from, name: callerName, signal });
+      setCall({ isReceivedCall: true, from, name: callerName, signal });
     });
   }, []);
 

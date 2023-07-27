@@ -24,6 +24,7 @@ const VideoPlayer = () => {
     callAccepted,
     myVideo,
     stream,
+    userVideo,
     name,
     callEnded,
   } = useContext(SocketContext);
@@ -48,7 +49,7 @@ const VideoPlayer = () => {
       </Paper>}
       {/* friend video */}
       <Paper className={classes.paper}>
-        {callAccepted && !callEnded (
+        {callAccepted && !callEnded && (
             <Grid item xs={12} md={6}>
           <Typography variant='h5' gutterBottom>
             Friend
@@ -56,7 +57,7 @@ const VideoPlayer = () => {
           <video
             playsInline
             muted
-            ref={null}
+            ref={userVideo}
             autoPlay
             className={classes.video}
           />
