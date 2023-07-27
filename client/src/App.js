@@ -5,7 +5,7 @@ import { AppBar, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import Notifications from "./components/Notifications";
 import Options from "./components/Options";
-import VideoPlayer from "./components/VideoPlayer";
+import VideoPlayer from "./components/VideoPlayer.jsx";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -32,9 +32,8 @@ const App = () => {
         </Typography>
       </AppBar>
       <VideoPlayer />
-      <Options>
-        <Notifications />
-      </Options>
+      <Options />
+      {/* <Notifications /></Options> */}
     </div>
   );
 };
